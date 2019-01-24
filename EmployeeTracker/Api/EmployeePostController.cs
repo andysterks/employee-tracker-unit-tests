@@ -7,11 +7,11 @@ namespace EmployeeTracker.Controllers
 {
     public class EmployeePostController : ControllerBase
     {
-        private readonly MockEmployeeDatabase _mockEmployeeDatabase;
+        private readonly IMockEmployeeDatabase _mockEmployeeDatabase;
 
-        public EmployeePostController()
+        public EmployeePostController(IMockEmployeeDatabase mockEmployeeDatabase)
         {
-            _mockEmployeeDatabase = new MockEmployeeDatabase();
+            _mockEmployeeDatabase = mockEmployeeDatabase;
         }
 
         [HttpPost("api/employees")]

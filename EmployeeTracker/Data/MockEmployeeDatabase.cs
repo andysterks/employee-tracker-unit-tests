@@ -4,7 +4,16 @@ using System.Collections.Generic;
 
 namespace EmployeeTracker.Data
 {
-    public class MockEmployeeDatabase
+    public interface IMockEmployeeDatabase
+    {
+        List<Employee> Get();
+        Employee Get(int id);
+        void Modify(int id, Employee employee);
+        void Create(Employee employee);
+        void Delete(int id);
+    }
+
+    public class MockEmployeeDatabase : IMockEmployeeDatabase
     {
         private List<Employee> _employees;
 

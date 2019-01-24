@@ -7,11 +7,11 @@ namespace EmployeeTracker.Controllers
 {
     public class EmployeeGetController : ControllerBase
     {
-        private readonly MockEmployeeDatabase _mockEmployeeDatabase;
+        private readonly IMockEmployeeDatabase _mockEmployeeDatabase;
 
-        public EmployeeGetController()
+        public EmployeeGetController(IMockEmployeeDatabase mockEmployeeDatabase)
         {
-            _mockEmployeeDatabase = new MockEmployeeDatabase();
+            _mockEmployeeDatabase = mockEmployeeDatabase;
         }
 
         [HttpGet("api/employees")]

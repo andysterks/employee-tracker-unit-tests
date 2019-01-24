@@ -5,11 +5,11 @@ namespace EmployeeTracker.Controllers
 {
     public class EmployeeDeleteController : ControllerBase
     {
-        private readonly MockEmployeeDatabase _mockEmployeeDatabase;
+        private readonly IMockEmployeeDatabase _mockEmployeeDatabase;
 
-        public EmployeeDeleteController()
+        public EmployeeDeleteController(IMockEmployeeDatabase mockEmployeeDatabase)
         {
-            _mockEmployeeDatabase = new MockEmployeeDatabase();
+            _mockEmployeeDatabase = mockEmployeeDatabase;
         }
 
         [HttpDelete("api/employees/{id}")]

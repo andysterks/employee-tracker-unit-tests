@@ -6,11 +6,11 @@ namespace EmployeeTracker.Controllers
 {
     public class EmployeePutController : Controller
     {
-        private readonly MockEmployeeDatabase _mockEmployeeDatabase;
+        private readonly IMockEmployeeDatabase _mockEmployeeDatabase;
 
-        public EmployeePutController()
+        public EmployeePutController(IMockEmployeeDatabase mockEmployeeDatabase)
         {
-            _mockEmployeeDatabase = new MockEmployeeDatabase();
+            _mockEmployeeDatabase = mockEmployeeDatabase;
         }
 
         [HttpPut("api/employees/{id}")]
